@@ -28,7 +28,7 @@ def run():
     try:
         for line in sys.stdin:
             pat1 = r"^(([0-9]{1,3}\.){3}[0-9]{1,3}) - \[(\d{4}-\d{2}-\d{2}.+)"
-            pat2 = r"\] \"GET\s+/projects/260 HTTP/1.1\"\s+(\d{3})\s+(\d+)$"
+            pat2 = r'\] ".+"\s+(\d{3})\s+(\d+)$'
             pat = pat1 + pat2
             match = re.match(pat, line)
             if not match:
